@@ -12,17 +12,20 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: { title: 'Home', showInNav: true },
     },
     {
       path: '/about',
       name: 'about',
       component: AboutMeView,
+      meta: { title: 'About me', showInNav: true },
     },
     {
-      path: '/CV',
+      path: '/cv',
       name: 'cv',
       component: CurriculumVitae,
       props: { jobs: jobsData, skillCategories: skillCategories },
+      meta: { title: 'CV', showInNav: true },
     },
   ],
 })
