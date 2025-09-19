@@ -1,39 +1,56 @@
-# vue-project
+# 👋 Hi, I'm Sebastian Springer
 
-This template should help get you started developing with Vue 3 in Vite.
+I’m a **Front-End Developer** with 15+ years of experience building clean, scalable, and user-friendly applications.  
+I thrive at the intersection of **design and development**, bringing both technical expertise and an eye for great user experiences.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 👨‍💻 About Me
 
-## Type Support for `.vue` Imports in TS
+- 💡 Passionate about **frontend and software development** with a focus on scalability and long-term value.
+- ⚡ Experienced in **Vue, Angular, and React**, with a strong foundation in **JavaScript, TypeScript, HTML, and CSS**.
+- 🎨 Background in **graphic design**, helping me bridge the gap between design and development.
+- 🤝 Skilled at collaborating in **Agile/SAFe teams** across startups and large organizations like **Novo Nordisk, Nets, and Nordea**.
+- 🌍 Enjoy working in **multicultural environments**, ensuring alignment between technical direction and business goals.
+- 🚀 Currently exploring **AI tools** (LangChain, CrewAI, n8n, Copilot) to boost productivity and innovation.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+---
 
-## Customize configuration
+## 🛠️ Tech Snapshot
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Frameworks & Tools
 
-## Project Setup
+Vue · Angular · React · Tailwind · Storybook · Playwright · Git & GitHub · Docker · AWS
 
-```sh
-npm install
-```
+### Core Web Development
 
-### Compile and Hot-Reload for Development
+HTML5 · CSS3+ · JavaScript · TypeScript · SASS · REST APIs
 
-```sh
-npm run dev
-```
+### Design & Analysis
 
-### Type-Check, Compile and Minify for Production
+Web/UI Design · Graphic Design · SEO · Google Analytics
 
-```sh
-npm run build
-```
+### AI & Learning
 
-### Lint with [ESLint](https://eslint.org/)
+ChatGPT · GitHub Copilot · n8n · Python · Crew AI · LangChain
 
-```sh
-npm run lint
-```
+### Languages
+
+🇩🇰 Danish (native) · 🇬🇧 English (fluent) · 🇸🇪 Swedish · 🇳🇴 Norwegian · 🇫🇷 French (basic)
+
+---
+
+## 🌱 Outside of Work
+
+When I’m not coding, you’ll probably find me:
+
+- 🏀 Playing basketball
+- ✈️ Traveling the world
+- 🤖 Experimenting with the latest in AI
+
+---
+
+## 📫 Let’s Connect
+
+- [LinkedIn](https://www.linkedin.com/in/sebastianspringer/)
+- [GitHub](https://github.com/yourusername)
