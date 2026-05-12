@@ -10,9 +10,9 @@ I thrive at the intersection of **design and development**, bringing both techni
 - 💡 Passionate about **frontend and software development** with a focus on scalability and long-term value.
 - ⚡ Experienced in **Vue, Angular, and React**, with a strong foundation in **JavaScript, TypeScript, HTML, and CSS**.
 - 🎨 Background in **graphic design**, helping me bridge the gap between design and development.
-- 🤝 Skilled at collaborating in **Agile/SAFe teams** across startups and large organizations like **Novo Nordisk, Nets, and Nordea**.
+- 🤝 Skilled at collaborating in **Agile/SAFe teams** across startups and large organizations like **Eupry, Novo Nordisk, Nets, and Nordea**.
 - 🌍 Enjoy working in **multicultural environments**, ensuring alignment between technical direction and business goals.
-- 🚀 Currently exploring **AI tools** (LangChain, CrewAI, n8n, Copilot) to boost productivity and innovation.
+- 🚀 Currently working hands-on with **AI tools** (Claude, AI Agentic OS, token optimization, LangChain, CrewAI, n8n, Copilot) to boost productivity and innovation.
 
 ---
 
@@ -32,7 +32,7 @@ Web/UI Design · Graphic Design · SEO · Google Analytics
 
 ### AI & Learning
 
-ChatGPT · GitHub Copilot · n8n · Python · Crew AI · LangChain
+Claude · AI Agentic OS · Token Optimization · ChatGPT · GitHub Copilot · n8n · Python · Crew AI · LangChain
 
 ### Languages
 
@@ -53,4 +53,4 @@ When I’m not coding, you’ll probably find me:
 ## 📫 Let’s Connect
 
 - [LinkedIn](https://www.linkedin.com/in/sebastianspringer/)
-- [GitHub](https://github.com/yourusername)
+- [GitHub](https://github.com/sebspringer)
