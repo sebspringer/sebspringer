@@ -61,9 +61,12 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    name: 'AI Tools',
+    name: 'AI',
     technologies: [
       { name: 'ChatGPT', level: 8, years: 2 },
+      { name: 'Claude', level: 8, years: 0.7 },
+      { name: 'AI Agentic OS', level: 7, years: 0.7 },
+      { name: 'Token Optimization', level: 7, years: 0.7 },
       { name: 'Copilot', level: 7, years: 1 },
       { name: 'N8N', level: 4, years: 1 },
     ],

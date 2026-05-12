@@ -3,11 +3,17 @@ import type { Job } from '@/models/jobsModel'
 export const jobsData: Job[] = [
   {
     period: 'CURRENT JOB',
+    title: 'Senior Frontend Developer',
+    skills: ['Vue3', 'AngularJS', 'AI (Claude)', 'Agile', 'GXP'],
+    company: 'Eupry',
+    activeJob: true,
+  },
+  {
+    period: '2023-2025',
     title: 'Senior Software Developer',
     skills: ['Vue2', 'Vue3', 'Agile', 'AWS', 'AI', 'GXP', 'Composition API'],
     description: 'Development of internal software for Novo Nordisk.',
     company: 'Novo Nordisk',
-    activeJob: true,
   },
   {
     period: '2022-2023',
