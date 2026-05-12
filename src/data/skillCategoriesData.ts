@@ -5,7 +5,7 @@ export const skillCategories: SkillCategory[] = [
     name: 'Frameworks & Tools',
     technologies: [
       { name: 'VueJS (Vue2 + Vue3)', level: 8, years: 6 },
-      { name: 'Composition API', level: 8, years: 2 },
+      { name: 'Composition API', level: 8, years: 4 },
       { name: 'Pinia Colada', level: 7, years: 2 },
       { name: 'Angular', level: 7, years: 6 },
       { name: 'Vite', level: 7, years: 2 },
