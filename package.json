@@ -10,6 +10,7 @@
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "deploy": "gh-pages -d dist",
+    "cv:pdf": "\"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=public/cv.pdf scripts/cv-template.html",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",

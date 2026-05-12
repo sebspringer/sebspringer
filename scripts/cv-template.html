@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sebastian Springer — CV</title>
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <style>
+      :root {
+        /* Website palette */
+        --indigo: #6366f1;       /* indigo-500 — primary accent */
+        --indigo-soft: #818cf8;  /* indigo-400 */
+        --sky: #0369a1;          /* sky-700 — secondary accent */
+        --sky-soft: #0284c7;     /* sky-600 */
+        --pink: #ff80b5;         /* gradient pink */
+        --violet: #9089fc;       /* gradient violet */
+
+        --ink: #111827;          /* gray-900 — body text */
+        --ink-soft: #374151;     /* gray-700 */
+        --muted: #6b7280;        /* gray-500 */
+        --muted-2: #9ca3af;      /* gray-400 */
+        --line: #e5e7eb;         /* gray-200 */
+        --soft: #f3f4f6;         /* gray-100 — row bg */
+        --paper: #ffffff;
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 14mm 14mm 12mm;
+        position: relative;
+        overflow: hidden;
+        page-break-after: always;
+      }
+      .page:last-child { page-break-after: auto; }
+
+      /* Brand blob — same shape as the site's hero, used as a corner accent */
+      .blob {
+        position: absolute;
+        top: -110px;
+        right: -120px;
+        width: 480px;
+        height: 280px;
+        transform: rotate(30deg);
+        background: linear-gradient(to top right, var(--pink), var(--violet));
+        opacity: 0.18;
+        filter: blur(40px);
+        clip-path: polygon(
+          74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%,
+          72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%,
+          27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%,
+          74.1% 44.1%
+        );
+        z-index: 0;
+        pointer-events: none;
+      }
+      .blob.bl {
+        top: auto; right: auto; bottom: -120px; left: -120px;
+        transform: rotate(210deg);
+      }
+      .content { position: relative; z-index: 1; }
+
+      /* HEADER */
+      header.top {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        align-items: center;
+        gap: 22px;
+      }
+      .name {
+        font-size: 56px;
+        line-height: 1;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        margin: 0;
+      }
+      .name .last { display: block; }
+      .photo-wrap {
+        position: relative;
+        width: 100px;
+        height: 100px;
+      }
+      .photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center 25%;
+        display: block;
+      }
+      .age {
+        position: absolute;
+        right: -14px;
+        bottom: 0;
+        background: var(--indigo);
+        color: white;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+      .brace {
+        font-size: 56px;
+        font-weight: 200;
+        color: var(--ink);
+        line-height: 1;
+        margin-left: 6px;
+        margin-right: -2px;
+      }
+      .contact {
+        font-size: 11.5px;
+        color: var(--ink);
+        line-height: 1.65;
+        white-space: nowrap;
+      }
+      .contact a { color: var(--ink); text-decoration: none; }
+      .contact .accent { color: var(--indigo); }
+
+      .divider-dots {
+        margin: 6px 0;
+        border-top: 1px dotted var(--muted-2);
+      }
+
+      /* Roles bar */
+      .roles {
+        background: var(--soft);
+        padding: 10px 14px;
+        margin: 14px 0 8px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--ink);
+        display: flex;
+        gap: 22px;
+      }
+      .roles .indigo { color: var(--indigo); }
+      .roles .sky    { color: var(--sky); }
+      .roles .pink   { color: #db2777; }
+
+      /* Section heading */
+      h2.section {
+        font-size: 26px;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        color: var(--ink);
+        margin: 14px 0 0;
+        text-transform: uppercase;
+      }
+      h2.section + .dotline {
+        border-top: 1px dotted var(--muted-2);
+        margin: 6px 0 10px;
+      }
+
+      /* Experience / Education rows */
+      .row {
+        display: grid;
+        grid-template-columns: 22mm 1fr 30mm;
+        gap: 14px;
+        align-items: start;
+        padding: 9px 12px 9px 0;
+        margin-bottom: 8px;
+      }
+      .row .period {
+        color: var(--muted);
+        font-size: 12px;
+        padding-top: 10px;
+        font-weight: 400;
+      }
+      .row .card {
+        background: var(--soft);
+        padding: 8px 12px;
+        border-radius: 2px;
+      }
+      .row .title {
+        font-size: 12.5px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--sky);
+        margin: 0 0 4px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 4px;
+      }
+      .row.active .title { color: var(--indigo); }
+      .row.art .title  { color: #16a34a; } /* one-off green like the old CV (art-director vibe) */
+      .row .title .alt { color: var(--indigo); }
+      .row .skills {
+        font-size: 10.5px;
+        color: var(--muted);
+        line-height: 1.5;
+        margin: 0;
+      }
+      .row .desc {
+        font-size: 10.5px;
+        color: var(--ink-soft);
+        margin-top: 6px;
+      }
+      .row .company {
+        text-align: left;
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 11.5px;
+        padding-top: 10px;
+        letter-spacing: 0.02em;
+      }
+
+      /* Skills grid */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 22px;
+        margin-top: 4px;
+      }
+      .skill-cat {
+        margin-bottom: 4px;
+      }
+      .skill-cat.full { grid-column: 1 / -1; }
+      .skill-cat h3 {
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--ink);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin: 0 0 4px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid var(--line);
+      }
+      .skill-cat .list {
+        font-size: 11px;
+        color: var(--ink-soft);
+        line-height: 1.6;
+      }
+
+      /* Languages */
+      .lang-wrap {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 14px;
+        align-items: center;
+        margin-top: 6px;
+      }
+      .lang-mark {
+        font-size: 110px;
+        line-height: 0.9;
+        color: var(--indigo);
+        font-weight: 300;
+        text-align: center;
+      }
+      .lang-list {
+        font-size: 12px;
+      }
+      .lang-row {
+        display: grid;
+        grid-template-columns: 90px auto;
+        gap: 18px;
+        align-items: center;
+        padding: 4px 0;
+        border-bottom: 1px dotted var(--line);
+      }
+      .lang-row:last-child { border-bottom: 0; }
+      .dots { display: flex; gap: 6px; }
+      .dot {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: var(--line);
+      }
+      .dot.on { background: var(--indigo); }
+
+      /* Footer */
+      .foot {
+        position: absolute;
+        bottom: 6mm;
+        left: 14mm;
+        right: 14mm;
+        font-size: 9.5px;
+        color: var(--muted-2);
+        display: flex;
+        justify-content: space-between;
+        z-index: 1;
+      }
+
+      @page { size: A4; margin: 0; }
+    </style>
+  </head>
+  <body>
+    <!-- ===================== PAGE 1 ===================== -->
+    <section class="page">
+      <div class="blob"></div>
+      <div class="content">
+        <header class="top">
+          <h1 class="name">
+            Sebastian
+            <span class="last">Springer</span>
+          </h1>
+          <div class="photo-wrap">
+            <img class="photo" src="../src/assets/me.jpg" alt="Sebastian Springer" />
+            <span class="age">38 yrs</span>
+          </div>
+          <div style="display:flex; align-items:center;">
+            <span class="brace">{</span>
+            <div class="contact">
+              <div><span class="accent">sebspringer@gmail.com</span></div>
+              <div>+45 50 55 24 71</div>
+              <div>Dalstrøget 107, 1th</div>
+              <div>2870 Dyssegård</div>
+              <div style="margin-top:4px"><span class="accent">sebspringer.github.io</span></div>
+            </div>
+          </div>
+        </header>
+
+        <div class="roles">
+          <span>SOFTWARE <span class="indigo">DEVELOPER</span></span>
+          <span>WEB <span class="sky">DESIGNER</span></span>
+          <span>GRAPHIC <span class="pink">DESIGNER</span></span>
+        </div>
+
+        <h2 class="section">Experience</h2>
+        <div class="dotline"></div>
+
+        <div class="row active">
+          <div class="period">Current</div>
+          <div class="card">
+            <h3 class="title">Senior Frontend Developer</h3>
+            <p class="skills">Vue3 | AngularJS | AI (Claude) | Agile | GXP</p>
+          </div>
+          <div class="company">EUPRY</div>
+        </div>
+
+        <div class="row">
+          <div class="period">2023–2025</div>
+          <div class="card">
+            <h3 class="title">Senior Software Developer</h3>
+            <p class="skills">Vue2 | Vue3 | Agile | AWS | AI | GXP | Composition API</p>
+            <p class="desc">Development of internal software for Novo Nordisk.</p>
+          </div>
+          <div class="company">NOVO NORDISK</div>
+        </div>
+
+        <div class="row">
+          <div class="period">2022–2023</div>
+          <div class="card">
+            <h3 class="title">Senior Frontend Developer</h3>
+            <p class="skills">Angular | UI design | SAFe | Vue2 | Agile | Scrum | Leadership</p>
+          </div>
+          <div class="company">NORDEA</div>
+        </div>
+
+        <div class="row">
+          <div class="period">2019–2022</div>
+          <div class="card">
+            <h3 class="title">Frontend Developer</h3>
+            <p class="skills">Angular | UI design | SAFe | React | Development | Agile | Leadership</p>
+          </div>
+          <div class="company">NETS</div>
+        </div>
+
+        <div class="row">
+          <div class="period">2017–2019</div>
+          <div class="card">
+            <h3 class="title">Lead Frontend Developer</h3>
+            <p class="skills">Angular | UI design | Web development | Leadership | Project management | App development | Consultant | Presentations | Jira</p>
+          </div>
+          <div class="company">VERSATIL</div>
+        </div>
+
+        <div class="row">
+          <div class="period">2015–2017</div>
+          <div class="card">
+            <h3 class="title">Frontend Developer</h3>
+            <p class="skills">Web design | Online marketing | Data analysis | Development</p>
+          </div>
+          <div class="company">AUTOOFFER</div>
+        </div>
+
+        <div class="row art">
+          <div class="period">2013–2015</div>
+          <div class="card">
+            <h3 class="title">Art Director <span class="alt">&amp; Lead Frontend Developer</span></h3>
+            <p class="skills">Web design | Social media | Online marketing | Development</p>
+          </div>
+          <div class="company">ZENJILABS</div>
+        </div>
+
+        <div class="row">
+          <div class="period">2010–2012</div>
+          <div class="card">
+            <h3 class="title">Web Designer <span style="color: var(--sky)">&amp; Campaign Manager</span></h3>
+            <p class="skills">Web design | Project management | Campaigns | Development</p>
+          </div>
+          <div class="company">AD PEPPER MEDIA</div>
+        </div>
+      </div>
+      <div class="foot">
+        <span>Sebastian Springer · CV</span>
+        <span>1 / 2</span>
+      </div>
+    </section>
+
+    <!-- ===================== PAGE 2 ===================== -->
+    <section class="page">
+      <div class="blob bl"></div>
+      <div class="content">
+        <h2 class="section">Skills</h2>
+        <div class="dotline"></div>
+
+        <div class="skills-grid">
+          <div class="skill-cat full">
+            <h3>Web / Software Development</h3>
+            <div class="list">
+              HTML5 | CSS3 | JavaScript | TypeScript | VueJS (Vue2 + Vue3) | Composition API
+              | Pinia Colada | Angular | React | Vite | Tailwind | SASS | Storybook | Playwright
+              | Rest API | Git &amp; GitHub | Docker | AWS
+            </div>
+          </div>
+
+          <div class="skill-cat">
+            <h3>Design</h3>
+            <div class="list">
+              Web design | Graphic design | UI<br />
+              Social media | Concept development
+            </div>
+          </div>
+
+          <div class="skill-cat">
+            <h3>Analysis</h3>
+            <div class="list">
+              SEO | Google Analytics | Selling Data<br />
+              Project management | Adwords | JIRA | SAFe
+            </div>
+          </div>
+
+          <div class="skill-cat">
+            <h3>Online</h3>
+            <div class="list">CPC | CPL | CPA | CPM</div>
+          </div>
+
+          <div class="skill-cat">
+            <h3>Learning</h3>
+            <div class="list">Python | Crew AI | LangGraph &amp; LangChain | Grafana</div>
+          </div>
+
+          <div class="skill-cat full">
+            <h3>AI</h3>
+            <div class="list">
+              ChatGPT | Claude | AI Agentic OS | Token Optimization | Copilot | N8N
+              | Cursor | CrewAI
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section">Education</h2>
+        <div class="dotline"></div>
+
+        <div class="row">
+          <div class="period">2017</div>
+          <div class="card">
+            <h3 class="title">Angular Courses</h3>
+            <p class="skills">Superusers.dk (SU-070 + SU-072 + SU-074)</p>
+          </div>
+          <div class="company"></div>
+        </div>
+
+        <div class="row">
+          <div class="period">2013</div>
+          <div class="card">
+            <h3 class="title">App Development</h3>
+            <p class="skills">Nyledige.dk (Aug–Sep)</p>
+          </div>
+          <div class="company"></div>
+        </div>
+
+        <div class="row">
+          <div class="period">2007–2009</div>
+          <div class="card">
+            <h3 class="title">International Multimediedesigner</h3>
+            <p class="skills">Københavns Erhvervsakademi</p>
+          </div>
+          <div class="company"></div>
+        </div>
+
+        <div class="row">
+          <div class="period">2005–2006</div>
+          <div class="card">
+            <h3 class="title">Webdesign</h3>
+            <p class="skills">Medieskolen Lyngby</p>
+          </div>
+          <div class="company"></div>
+        </div>
+
+        <h2 class="section">Languages</h2>
+        <div class="dotline"></div>
+
+        <div class="lang-wrap">
+          <div class="lang-mark">(</div>
+          <div class="lang-list">
+            <div class="lang-row">
+              <span>Danish</span>
+              <span class="dots">
+                <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
+              </span>
+            </div>
+            <div class="lang-row">
+              <span>English</span>
+              <span class="dots">
+                <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span>
+              </span>
+            </div>
+            <div class="lang-row">
+              <span>Swedish</span>
+              <span class="dots">
+                <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span>
+              </span>
+            </div>
+            <div class="lang-row">
+              <span>Norwegian</span>
+              <span class="dots">
+                <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span>
+              </span>
+            </div>
+            <div class="lang-row">
+              <span>French</span>
+              <span class="dots">
+                <span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <span>Sebastian Springer · CV</span>
+        <span>2 / 2</span>
+      </div>
+    </section>
+  </body>
+</html>

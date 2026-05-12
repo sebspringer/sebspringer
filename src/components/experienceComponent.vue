@@ -4,6 +4,9 @@ import type { Job } from '@/models/jobsModel'
 defineProps<{
   jobs: Job[]
 }>()
+
+const cvHref = import.meta.env.BASE_URL + 'cv.pdf'
+const cvFilename = `Sebastian_Springer_CV_${new Date().getFullYear()}.pdf`
 </script>
 <template>
   <div class="flex w-full justify-center">
@@ -15,19 +18,38 @@ defineProps<{
           >
             EXPERIENCE
           </h1>
-          <a
-            href="#skills"
-            class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-          >
-            Discover My Skills
-          </a>
+          <div class="flex items-center justify-center gap-3 flex-wrap">
+            <a
+              href="#skills"
+              class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+            >
+              Discover My Skills
+            </a>
+            <a
+              :href="cvHref"
+              :download="cvFilename"
+              class="inline-flex items-center gap-2 rounded-md border border-indigo-500/60 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" />
+              </svg>
+              Download CV (PDF)
+            </a>
+          </div>
           <p
             class="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/9 sm:pl-5 sm:pr-5"
           >
             My name is Sebastian, and I'm passionate about frontend and software development,
             bringing 15 years of experience and strong collaboration skills to every project.
-            Currently I'm working for Novo Nordisk as a
-            <span class="text-indigo-500">Senior Software Developer.</span>
+            Currently I'm working for Eupry as a
+            <span class="text-indigo-500">Senior Frontend Developer.</span>
           </p>
         </div>
         <div>
