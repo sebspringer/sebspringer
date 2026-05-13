@@ -34,7 +34,7 @@ const mobileMenuOpen = ref(false)
           v-for="route in routes"
           :key="route.name"
           :to="route.path"
-          class="text-sm/6 font-semibold text-white"
+          class="nav-link text-sm/6 font-semibold text-white"
         >
           {{ route.meta?.title || route.name }}
         </RouterLink>
@@ -43,10 +43,15 @@ const mobileMenuOpen = ref(false)
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <a
           href="https://www.linkedin.com/in/sebastianspringer/"
-          class="text-sm/6 font-semibold text-white"
+          class="group text-sm/6 font-semibold text-white inline-flex items-center gap-1"
           target="_blank"
         >
-          Contact me <span aria-hidden="true">&rarr;</span>
+          Contact me
+          <span
+            aria-hidden="true"
+            class="inline-block transition-transform duration-300 group-hover:translate-x-1"
+            >&rarr;</span
+          >
         </a>
       </div>
     </nav>

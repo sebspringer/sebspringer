@@ -1,5 +1,4 @@
 import { jobsData } from '@/data/jobsData'
-import { skillCategories } from '@/data/skillCategoriesData'
 import AboutMeView from '@/views/AboutMeView.vue'
 import CurriculumVitae from '@/views/CurriculumVitae.vue'
 import HomeView from '@/views/HomeView.vue'
@@ -24,7 +23,7 @@ const router = createRouter({
       path: '/cv',
       name: 'cv',
       component: CurriculumVitae,
-      props: { jobs: jobsData, skillCategories: skillCategories },
+      props: { jobs: jobsData },
       meta: { title: 'CV', showInNav: true },
     },
   ],

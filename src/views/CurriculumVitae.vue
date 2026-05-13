@@ -9,6 +9,8 @@ defineProps<{
 }>()
 </script>
 <template>
-  <ExperienceComponent :jobs="jobs" />
-  <SkillsComponent :skills="skillCategories" />
+  <div>
+    <ExperienceComponent :jobs="jobs" />
+    <SkillsComponent :skills="skillCategories" />
+  </div>
 </template>

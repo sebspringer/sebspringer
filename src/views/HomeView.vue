@@ -1,21 +1,43 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const headline = "Let's Build Something Scalable?"
+const words = computed(() => headline.split(' '))
+</script>
+
 <template>
   <div class="flex w-full justify-center">
     <div
       class="py-32 flex flex-col sm:flex-col md:flex-row items-center justify-center gap-12 w-full max-w-5xl"
     >
       <div class="text-center w-full md:w-1/2">
-        <h1 class="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
-          Let’s Build Something Scalable?
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl"
+          aria-label="Let's Build Something Scalable?"
+        >
+          <span
+            v-for="(word, i) in words"
+            :key="i"
+            class="word mr-[0.25em]"
+            :style="{ '--word-delay': `${i * 90}ms` }"
+            >{{ word }}</span
+          >
         </h1>
-        <p class="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
+        <p
+          class="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8 reveal is-visible"
+          style="--reveal-delay: 700ms"
+        >
           I bring clean, efficient front-end code to teams that value quality and long-term
           thinking.
         </p>
-        <div class="mt-10 flex items-center justify-center gap-x-6">
+        <div
+          class="mt-10 flex items-center justify-center gap-x-6 reveal is-visible"
+          style="--reveal-delay: 900ms"
+        >
           <a
             href="https://www.linkedin.com/in/sebastianspringer/"
             target="_blank"
-            class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+            class="cta-glow rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
           >
             Connect with me
           </a>
@@ -23,7 +45,7 @@
           <a
             href="https://github.com/sebspringer"
             target="_blank"
-            class="text-sm font-medium text-gray-400 hover:text-white flex items-center gap-1"
+            class="text-sm font-medium text-gray-400 hover:text-white flex items-center gap-1 transition-colors"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -41,9 +63,12 @@
           </a>
         </div>
       </div>
-      <div
-        class="bg-[url(/src/assets/me.jpg)] bg-cover w-64 h-64 md:w-96 md:h-96 rounded-full"
-      ></div>
+      <div class="relative avatar-float">
+        <div class="avatar-halo" aria-hidden="true" />
+        <div
+          class="bg-[url(/src/assets/me.jpg)] bg-cover w-64 h-64 md:w-96 md:h-96 rounded-full ring-1 ring-white/10"
+        />
+      </div>
     </div>
   </div>
 </template>

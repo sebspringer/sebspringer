@@ -1,19 +1,14 @@
 <script setup lang="ts">
 import type { SkillCategory } from '@/models/skillCategoryModel'
-import { ref, onMounted } from 'vue'
+import { useReveal } from '@/composables/useReveal'
 
 const maxLevel: number = 10
-const animated = ref(false)
-
-onMounted(() => {
-  setTimeout(() => {
-    animated.value = true
-  }, 200)
-})
 
 defineProps<{
   skills: SkillCategory[]
 }>()
+
+const { target, revealed } = useReveal<HTMLElement>({ threshold: 0.1 })
 
 const getLevelDescription = (level: number): string => {
   if (level <= 3) return 'Beginner'
@@ -28,27 +23,39 @@ const getLevelDescription = (level: number): string => {
     <div class="pt-16 w-full">
       <div class="text-center max-w-2xl m-auto pb-6">
         <h2
-          class="lg:text-5xl md:text-5xl sm:text-4xl text-4xl font-semibold tracking-tight text-balance text-white"
+          class="lg:text-5xl md:text-5xl sm:text-4xl text-4xl font-semibold tracking-tight text-balance text-white reveal"
+          :class="{ 'is-visible': revealed }"
         >
           SKILLS
         </h2>
-        <p class="mt-4 text-lg font-medium text-pretty text-gray-400 sm:text-xl/9 sm:pl-5 sm:pr-5">
+        <p
+          class="mt-4 text-lg font-medium text-pretty text-gray-400 sm:text-xl/9 sm:pl-5 sm:pr-5 reveal"
+          :class="{ 'is-visible': revealed }"
+          style="--reveal-delay: 120ms"
+        >
           An overview of my current skills, experience levels, and related tools.
         </p>
       </div>
 
-      <section class="max-w-2xl mx-auto p-4 text-left rounded">
+      <section ref="target" class="max-w-2xl mx-auto p-4 text-left rounded">
         <div
           v-for="(category, index) in skills"
           :key="index"
-          class="mb-6 pb-4 [&:not(:last-child)]:border-b border-gray-800"
+          class="mb-6 pb-4 [&:not(:last-child)]:border-b border-gray-800 reveal"
+          :class="{ 'is-visible': revealed }"
+          :style="{ '--reveal-delay': `${index * 70}ms` }"
         >
           <h2 class="text-md font-bold text-sky-700 mb-3 uppercase">
             {{ category.name }}
           </h2>
 
-          <div v-for="(tech, tIndex) in category.technologies" :key="tIndex" class="mb-4">
-            <!-- Name + Level + Years -->
+          <div
+            v-for="(tech, tIndex) in category.technologies"
+            :key="tIndex"
+            class="mb-4 reveal"
+            :class="{ 'is-visible': revealed }"
+            :style="{ '--reveal-delay': `${index * 70 + tIndex * 40 + 120}ms` }"
+          >
             <div class="flex justify-between items-center text-sm text-gray-300 mb-1">
               <span class="font-medium">{{ tech.name }}</span>
               <span class="text-gray-400 text-xs">
@@ -59,12 +66,15 @@ const getLevelDescription = (level: number): string => {
               </span>
             </div>
 
-            <!-- Progress bar -->
             <div class="h-1.5 w-full bg-gray-700 rounded-full overflow-hidden">
               <div
-                class="h-1.5 bg-indigo-500 rounded-full transition-all duration-1000 ease-out"
-                :style="{ width: animated ? (tech.level / maxLevel) * 100 + '%' : '0%' }"
-              ></div>
+                class="relative h-1.5 bg-indigo-500 rounded-full transition-all duration-1000 ease-out overflow-hidden"
+                :class="{ 'skill-shimmer': revealed }"
+                :style="{
+                  width: revealed ? (tech.level / maxLevel) * 100 + '%' : '0%',
+                  transitionDelay: `${index * 70 + tIndex * 40 + 200}ms`,
+                }"
+              />
             </div>
           </div>
         </div>
