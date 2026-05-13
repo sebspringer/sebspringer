@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
-import { useReveal } from '@/composables/useReveal'
 
 interface Snippet {
   filename: string
@@ -197,11 +196,14 @@ const reduced =
   window.matchMedia &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-const { target, revealed } = useReveal<HTMLDivElement>({ threshold: 0.2 })
+const target = ref<HTMLDivElement | null>(null)
 
 let rafId: number | null = null
 let phaseStart = 0
 let phase: 'typing' | 'hold' | 'deleting' = 'typing'
+let inView = false
+let pausedAt: number | null = null
+let started = false
 
 const TYPE_MS_PER_CHAR = 22
 const DELETE_MS_PER_CHAR = 9
@@ -236,31 +238,69 @@ function frame(now: number) {
   rafId = requestAnimationFrame(frame)
 }
 
-let started = false
+function resumeLoop() {
+  if (rafId !== null || !inView || document.hidden) return
+  if (pausedAt !== null) {
+    phaseStart += performance.now() - pausedAt
+    pausedAt = null
+  } else {
+    phaseStart = performance.now()
+  }
+  rafId = requestAnimationFrame(frame)
+}
+
+function pauseLoop() {
+  if (rafId === null) return
+  cancelAnimationFrame(rafId)
+  rafId = null
+  pausedAt = performance.now()
+}
+
 function maybeStart() {
-  if (started || !revealed.value) return
+  if (started) return
   started = true
   if (reduced) {
     visibleLen.value = current.value.length
     return
   }
-  phaseStart = performance.now()
-  rafId = requestAnimationFrame(frame)
+  resumeLoop()
+}
+
+let visibilityObserver: IntersectionObserver | null = null
+
+function onVisibilityChange() {
+  if (document.hidden) pauseLoop()
+  else resumeLoop()
 }
 
 onMounted(() => {
-  const stop = () => {
-    if (revealed.value) {
-      maybeStart()
-    } else {
-      requestAnimationFrame(stop)
-    }
+  if (typeof IntersectionObserver !== 'undefined' && target.value) {
+    visibilityObserver = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0]
+        if (!entry) return
+        inView = entry.isIntersecting
+        if (inView) {
+          if (!started) maybeStart()
+          else resumeLoop()
+        } else {
+          pauseLoop()
+        }
+      },
+      { threshold: 0, rootMargin: '200px 0px' },
+    )
+    visibilityObserver.observe(target.value)
+  } else {
+    inView = true
+    maybeStart()
   }
-  stop()
+  document.addEventListener('visibilitychange', onVisibilityChange)
 })
 
 onBeforeUnmount(() => {
   if (rafId !== null) cancelAnimationFrame(rafId)
+  visibilityObserver?.disconnect()
+  document.removeEventListener('visibilitychange', onVisibilityChange)
 })
 
 const lineNumbers = computed(() => {

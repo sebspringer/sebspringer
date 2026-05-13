@@ -2,8 +2,6 @@
 import type { SkillCategory } from '@/models/skillCategoryModel'
 import { useReveal } from '@/composables/useReveal'
 
-const maxLevel: number = 10
-
 defineProps<{
   skills: SkillCategory[]
 }>()
@@ -15,6 +13,13 @@ const getLevelDescription = (level: number): string => {
   if (level <= 6) return 'Intermediate'
   if (level <= 8) return 'Proficient'
   return 'Expert'
+}
+
+const getLevelPercent = (level: number): number => {
+  if (level <= 3) return 30
+  if (level <= 6) return 60
+  if (level <= 8) return 80
+  return 100
 }
 </script>
 
@@ -71,7 +76,7 @@ const getLevelDescription = (level: number): string => {
                 class="relative h-1.5 bg-indigo-500 rounded-full transition-all duration-1000 ease-out overflow-hidden"
                 :class="{ 'skill-shimmer': revealed }"
                 :style="{
-                  width: revealed ? (tech.level / maxLevel) * 100 + '%' : '0%',
+                  width: revealed ? getLevelPercent(tech.level) + '%' : '0%',
                   transitionDelay: `${index * 70 + tIndex * 40 + 200}ms`,
                 }"
               />
