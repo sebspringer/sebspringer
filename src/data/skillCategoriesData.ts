@@ -4,14 +4,14 @@ export const skillCategories: SkillCategory[] = [
   {
     name: 'Frameworks & Tools',
     technologies: [
-      { name: 'VueJS (Vue2 + Vue3)', level: 8, years: 6 },
-      { name: 'Composition API', level: 8, years: 4 },
-      { name: 'Pinia Colada', level: 7, years: 2 },
+      { name: 'VueJS (Vue2 + Vue3)', level: 8, years: 7 },
+      { name: 'Composition API', level: 8, years: 5 },
+      { name: 'Pinia Colada', level: 7, years: 3 },
       { name: 'Angular', level: 7, years: 6 },
-      { name: 'Vite', level: 7, years: 2 },
-      { name: 'Tailwind', level: 8, years: 3 },
+      { name: 'Vite', level: 7, years: 3 },
+      { name: 'Tailwind', level: 8, years: 4 },
       { name: 'Storybook', level: 6, years: 2 },
-      { name: 'Playwright', level: 6, years: 1 },
+      { name: 'Playwright', level: 6, years: 2 },
       { name: 'Git & Github', level: 8, years: 6 },
       { name: 'Docker', level: 5, years: 2 },
       { name: 'AWS', level: 3, years: 1 },
@@ -20,8 +20,8 @@ export const skillCategories: SkillCategory[] = [
   {
     name: 'Web / Software Development',
     technologies: [
-      { name: 'HTML5', level: 9, years: 15 },
-      { name: 'CSS (CSS3+)', level: 9, years: 15 },
+      { name: 'HTML5', level: 9, years: 16 },
+      { name: 'CSS (CSS3+)', level: 9, years: 16 },
       { name: 'JavaScript', level: 8, years: 15 },
       { name: 'React', level: 3, years: 1 },
       { name: 'SASS', level: 7, years: 12 },
@@ -32,7 +32,7 @@ export const skillCategories: SkillCategory[] = [
   {
     name: 'Design',
     technologies: [
-      { name: 'Web Design', level: 8, years: 15 },
+      { name: 'Web Design', level: 8, years: 16 },
       { name: 'Graphic Design', level: 7 },
       { name: 'UI', level: 8 },
     ],
@@ -58,8 +58,6 @@ export const skillCategories: SkillCategory[] = [
     name: 'Learning',
     technologies: [
       { name: 'Python', level: 1, years: 0.5 },
-      { name: 'Crew AI', level: 1, years: 0.5 },
-      { name: 'LangGraph & LangChain', level: 1, years: 0.5 },
     ],
   },
   {
