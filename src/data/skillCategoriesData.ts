@@ -36,6 +36,7 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Web Design', level: 8, years: 16 },
       { name: 'Graphic Design', level: 7 },
       { name: 'UI', level: 8 },
+      { name: 'Design Systems', level: 8, years: 1 },
     ],
   },
   {
