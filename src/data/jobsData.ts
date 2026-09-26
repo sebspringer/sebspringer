@@ -11,7 +11,7 @@ export const jobsData: Job[] = [
   {
     period: '2023-2025',
     title: 'Senior Software Developer',
-    skills: ['Vue2', 'Vue3', 'Agile', 'AWS', 'AI', 'GXP', 'Composition API'],
+    skills: ['Vue2', 'Vue3', 'Agile', 'AWS', 'AI', 'Docs-as-Code', 'GXP', 'Composition API'],
     description: 'Development of internal software for Novo Nordisk.',
     company: 'Novo Nordisk',
   },
