@@ -12,7 +12,7 @@ I thrive at the intersection of **design and development**, bringing both techni
 - 🎨 Background in **graphic design**, helping me bridge the gap between design and development.
 - 🤝 Skilled at collaborating in **Agile/SAFe teams** across startups and large organizations like **Eupry, Novo Nordisk, Nets, and Nordea**.
 - 🌍 Enjoy working in **multicultural environments**, ensuring alignment between technical direction and business goals.
-- 🚀 Currently working hands-on with **AI tools** (Claude, AI Agentic OS, token optimization, LangChain, CrewAI, n8n, Copilot) to boost productivity and innovation.
+- 🚀 Working hands-on with **AI & LLMs** every day: building **AI agents and agentic workflows** with Claude Code, **multi-agent orchestration**, **MCP integrations**, prompt & context engineering, and integrating LLMs (Claude, Gemini) into real applications.
 
 ---
 
@@ -24,15 +24,19 @@ Vue · Angular · React · Tailwind · Storybook · Playwright · Git & GitHub �
 
 ### Core Web Development
 
-HTML5 · CSS3+ · JavaScript · TypeScript · SASS · REST APIs
+HTML5 · CSS3+ · JavaScript · TypeScript · SASS · REST APIs · Docs-as-Code
 
 ### Design & Analysis
 
-Web/UI Design · Graphic Design · SEO · Google Analytics
+Web/UI Design · Design Systems · Graphic Design · SEO · Google Analytics
 
-### AI & Learning
+### AI & LLM Engineering
 
-Claude · AI Agentic OS · Token Optimization · ChatGPT · GitHub Copilot · n8n · Python · Crew AI · LangChain
+Claude & Claude Code · AI Agents & Agentic Workflows · Multi-Agent Orchestration · MCP (Model Context Protocol) · Prompt & Context Engineering · LLM API Integration (Gemini, Claude) · AI-Assisted Development & Code Review · AI-Assisted UI Design · AI Agentic OS · Token Optimization & LLM Cost Tracking · Voice AI (STT/TTS) · ChatGPT · GitHub Copilot · Cursor · n8n
+
+### Learning
+
+Python · Crew AI · LangChain
 
 ### Languages
 
