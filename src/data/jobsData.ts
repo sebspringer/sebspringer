@@ -4,7 +4,7 @@ export const jobsData: Job[] = [
   {
     period: 'CURRENT JOB',
     title: 'Senior Frontend Developer',
-    skills: ['Vue3', 'AngularJS', 'AI (Claude)', 'Agile', 'GXP'],
+    skills: ['Vue3', 'AngularJS', 'AI (Claude)', 'Docs-as-Code', 'Agile', 'GXP'],
     company: 'Eupry',
     activeJob: true,
   },
