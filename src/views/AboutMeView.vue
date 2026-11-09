@@ -10,7 +10,7 @@ const paragraphs = [
   `I've had the opportunity to work in fast-paced, multicultural teams, both in startups and in larger organizations such as Novo Nordisk, Nets, and Nordea.`,
   `I'm passionate about helping teams navigate challenges and aligning technical directions with business objectives to deliver impactful results together, ensuring that everyone is heard and contributes to the shared goals.`,
   `I work hands-on with AI every day. I build AI agents and agentic workflows with Claude Code, including multi-agent orchestration, MCP integrations, and prompt and context engineering. I also integrate LLMs such as Claude and Gemini into real applications, and use AI-assisted development, code review, and UI design to ship faster.`,
-  `Outside of work, I enjoy travelling around the world and discovering new places, and staying active by playing basketball.`,
+  `Outside of work, I enjoy travelling around the world and discovering new places, making videogames and staying active by playing basketball.`,
 ]
 </script>
 
