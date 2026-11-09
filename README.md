@@ -36,7 +36,7 @@ Claude & Claude Code · AI Agents & Agentic Workflows · Multi-Agent Orchestrati
 
 ### Game Development
 
-Unreal Engine 5 · Unreal C++ & Plugin Development · Unreal Editor Automation (Python, headless) · Gameplay Systems (survival, building, combat, inventory, save/load) · World Building (Landscape, PCG, foliage streaming) · Performance Profiling & Asset Validation · Blender (modeling & Python) · AI 3D Asset Generation (ComfyUI, TRELLIS.2, Pixal3D, Lychee) · AI Game Tools (lore generation, voice cloning) · Agentic Game Development (Claude Code plugins & skills)
+Unreal Engine 5 · Unreal C++ & Plugin Development · Unreal Editor Automation (Python, headless) · Gameplay Systems (survival, building, combat, inventory, save/load) · World Building (Landscape, PCG, foliage streaming) · Performance Profiling & Asset Validation · Blender (modeling & Python) · AI 3D Asset Generation · AI Game Tools · Agentic Game Development (Claude Code plugins & skills)
 
 ### Learning
 
