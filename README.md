@@ -34,6 +34,10 @@ Web/UI Design · Design Systems · Graphic Design · SEO · Google Analytics
 
 Claude & Claude Code · AI Agents & Agentic Workflows · Multi-Agent Orchestration · MCP (Model Context Protocol) · Prompt & Context Engineering · LLM API Integration (Gemini, Claude) · AI-Assisted Development & Code Review · AI-Assisted UI Design · AI Agentic OS · Token Optimization & LLM Cost Tracking · Voice AI (STT/TTS) · ChatGPT · GitHub Copilot · Cursor · n8n
 
+### Game Development
+
+Unreal Engine 5 · Unreal C++ & Plugin Development · Unreal Editor Automation (Python, headless) · Gameplay Systems (survival, building, combat, inventory, save/load) · World Building (Landscape, PCG, foliage streaming) · Performance Profiling & Asset Validation · Blender (modeling & Python) · AI 3D Asset Generation · AI Game Tools · Agentic Game Development (Claude Code plugins & skills)
+
 ### Learning
 
 Python · Crew AI · LangChain
@@ -50,6 +54,7 @@ When I’m not coding, you’ll probably find me:
 
 - 🏀 Playing basketball
 - ✈️ Traveling the world
+- 🎮 Making videogames
 - 🤖 Experimenting with the latest in AI
 
 ---

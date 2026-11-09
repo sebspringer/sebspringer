@@ -83,6 +83,21 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
+    name: 'Game Development',
+    technologies: [
+      { name: 'Unreal Engine 5', level: 5 },
+      { name: 'Unreal C++ & Plugin Development', level: 4 },
+      { name: 'Unreal Editor Automation (Python, Headless)', level: 5 },
+      { name: 'Gameplay Systems (Survival, Building, Combat, Inventory, Save/Load)', level: 4 },
+      { name: 'World Building (Landscape, PCG, Foliage Streaming)', level: 4 },
+      { name: 'Performance Profiling & Asset Validation', level: 4 },
+      { name: 'Blender (Modeling & Python Scripting)', level: 4 },
+      { name: 'AI 3D Asset Generation', level: 5 },
+      { name: 'AI Game Tools', level: 5 },
+      { name: 'Agentic Game Development (Claude Code Plugins & Skills)', level: 7 },
+    ],
+  },
+  {
     name: 'Languages',
     technologies: [
       { name: 'Danish', level: 10 },
